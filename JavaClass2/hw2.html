@@ -1,0 +1,86 @@
+<p><span face="Helvetica, Arial, sans-serif" style="font-family: Helvetica, Arial, sans-serif;">This assignment will give you practice with while loops and pseudo-random numbers.  You are going to write a program that allows the user to play a simple guessing game in which your program thinks up an integer and allows the user to make guesses until the user gets it right.  For each incorrect guess you will tell the user whether the right answer is higher or lower.  Your program is required to <i>exactly</i> reproduce the format and behavior of the log of execution at the end of this write-up.</span></p>
+<p><span face="Helvetica, Arial, sans-serif" style="font-family: Helvetica, Arial, sans-serif;">At a minimum, your program should have the following static methods in addition to method main:</span></p>
+<p><span face="Helvetica, Arial,
+          sans-serif" style="font-family: Helvetica, Arial, sans-serif;">·         a method that introduces the game</span></p>
+<p><span face="Helvetica, Arial,
+          sans-serif" style="font-family: Helvetica, Arial, sans-serif;">·         a method to play one game with the user (just one game, not multiple games)</span></p>
+<p><span face="Helvetica, Arial,
+          sans-serif" style="font-family: Helvetica, Arial, sans-serif;">·         a method to report overall results to the user</span></p>
+<p><span face="Helvetica, Arial, sans-serif" style="font-family: Helvetica, Arial, sans-serif;">You may define more methods than this if you find it helpful, although you will find that the limitation that methods can return only one value will tend to limit how much you can decompose this problem.</span></p>
+<p><span face="Helvetica, Arial, sans-serif" style="font-family: Helvetica, Arial, sans-serif;">You are to define a class constant for the maximum number used in the guessing game.  The sample log shows the user making guesses from 1 to 100, but the choice of 100 is arbitrary.  By introducing a constant for 100, you should be able to change just the value of the constant to make the program play the game with a range of 1 to 50 or a range of 1 to 250 or some other range starting with 1.</span></p>
+<p><span face="Helvetica, Arial, sans-serif" style="font-family: Helvetica, Arial, sans-serif;">When you ask the user whether or not to play again, you should use the “next()” method of the Scanner class to read a one-word answer from the user.  You should continue playing if this answer is “yes” no matter the case.  Notice that the user is allowed to type words like “Yes”, "YES" or "yEs".  <span>You should stop playing if this answer is "no" no matter the case. In case the use enter a string different from "yes' or "no" (no matter the case), the program should ask the question again.</span></span></p>
+<p><span face="Helvetica, Arial, sans-serif" style="font-family: Helvetica, Arial, sans-serif;">You can assume that the user always types an integer when guessing, that the integer is always in an appropriate range. On the contrary, the user can input any string when asked whether to play again. </span></p>
+<p><span face="Helvetica, Arial, sans-serif" style="font-family: Helvetica, Arial, sans-serif;">You will notice at the end of the log that you are to report various statistics about the series of games played by the user.  You are to report the total number of games played, the total number of guesses made (all games included), the average number of guesses per game, and the best (fewest) number of guesses used in any single game.  The average number of games should be rounded to one decimal place (you can use either the <span style="font-family: 'courier new', courier, monospace;">round</span> method or the <span style="font-family: 'courier new', courier, monospace;">printf</span> method).</span></p>
+<p><span face="Helvetica, Arial, sans-serif" style="font-family: Helvetica, Arial, sans-serif;">Here are a few helpful hints to keep in mind.</span></p>
+<ul type="disc">
+<li><span face="Helvetica, Arial, sans-serif" style="font-family: Helvetica, Arial, sans-serif;">To deal with the yes/no response from the user, you will want to use some of the String class methods described in section 3.3 and 4.3 of the book or the lecture slides for 1/29.  You should use the next() method of the <span style="font-family: 'courier new', courier, monospace;">Scanner</span> class to read a word from the console.</span></li>
+<li><span face="Helvetica, Arial, sans-serif" style="font-family: Helvetica, Arial, sans-serif;">Because this program uses pseudo-random numbers, you won’t be able to recreate this exact log.  The key requirement is that you reproduce the <i>format</i> of this log and that your calculations for overall statistics are correct for your log.</span></li>
+<li><span face="Helvetica, Arial, sans-serif" style="font-family: Helvetica, Arial, sans-serif;">It’s a good idea to change the value of your class constant and run the program to make sure that everything works right with the new value of the constant.  For example, turn it into a guessing game for numbers between 1 and 5.</span></li>
+<li><span face="Helvetica, Arial, sans-serif" style="font-family: Helvetica, Arial, sans-serif;">While you are developing your program, you might want to have it print out the answer before the user begins guessing.  Obviously you don’t want this in the final version of the program, but it can be helpful for you while you are developing the code.</span></li>
+</ul>
+<p><span face="Helvetica, Arial, sans-serif" style="font-family: Helvetica, Arial, sans-serif;">You should handle the case where the user guesses the correct number on the first try.  Print the following message:</span></p>
+<p style="margin-left: 30px;"><span face="Helvetica, Arial, sans-serif" style="font-family: 'courier new', courier, monospace;">You got it right in 1 guess</span></p>
+<p><span face="Helvetica, Arial, sans-serif" style="font-family: Helvetica, Arial, sans-serif;">You are asked to write very short methods that are no longer than 15 lines long.  Be sure to decompose your code into methods, so you won't end up having methods that are longer than 15 lines.  Remember that the main method is one method of the program and should play a role.  You shouldn’t have all of the code in main because you are required to have the methods described at the beginning of this write-up.</span></p>
+<p><span face="Helvetica, Arial, sans-serif" style="font-family: Helvetica, Arial, sans-serif;">We will once again expect you to use good programming style and to include useful comments throughout your program.  We will expect you to make appropriate choices about when to store values as int versus double, which if/else constructs to use, what parameters to pass, and so on.</span></p>
+<p><span face="Helvetica, Arial, sans-serif" style="font-family: Helvetica, Arial, sans-serif;">For this assignment you are limited to the language features in Chapters 1-5 shown in lecture or the textbook, although you are not allowed to use the break statement or what are described as “forever loops.”</span></p>
+<p><span face="Helvetica, Arial, sans-serif" style="font-family: Helvetica, Arial, sans-serif;">Use whitespace and indentation properly.  Limit lines to 100 characters.  Give meaningful names to methods and variables, and follow Java's naming standards.  Localize variables whenever possible.  Include a comment at the beginning of your program with basic description information and a comment at the start of each method.  Some students try to achieve repetition without properly using while loops, by writing a method that calls itself; this is not appropriate on this assignment and will result in a deduction in points</span></p>
+<p><span face="Helvetica, Arial,
+            sans-serif" style="font-family: Helvetica, Arial, sans-serif;">Your program should be stored in a file called <span style="font-family: 'courier new', courier, monospace;">Guess.java</span> and turned in as this file.</span></p>
+<p><b><span style="text-decoration: underline;">Log of execution (user input bold and underlined)</span></b></p>
+<p></p>
+<p style="margin-left: 30px;"><span style="font-family: 'courier new', courier, monospace;"><b><i>&lt;&lt; your intro message here &gt;&gt;</i></b></span></p>
+<p style="margin-left: 30px;"><span style="font-family: 'courier new', courier, monospace;">I'm thinking of a number between 1 and 100...</span></p>
+<p style="margin-left: 30px;"><span style="font-family: 'courier new', courier, monospace;">Your guess? <b><span style="text-decoration: underline;">50</span></b></span></p>
+<p style="margin-left: 30px;"><span style="font-family: 'courier new', courier, monospace;">It's lower.</span></p>
+<p style="margin-left: 30px;"><span style="font-family: 'courier new', courier, monospace;">Your guess? <b><span style="text-decoration: underline;">25</span></b></span></p>
+<p style="margin-left: 30px;"><span style="font-family: 'courier new', courier, monospace;">It's lower.</span></p>
+<p style="margin-left: 30px;"><span style="font-family: 'courier new', courier, monospace;">Your guess? <b><span style="text-decoration: underline;">10</span></b></span></p>
+<p style="margin-left: 30px;"><span style="font-family: 'courier new', courier, monospace;">It's lower.</span></p>
+<p style="margin-left: 30px;"><span style="font-family: 'courier new', courier, monospace;">Your guess? <b><span style="text-decoration: underline;">5</span></b></span></p>
+<p style="margin-left: 30px;"><span style="font-family: 'courier new', courier, monospace;">It's higher.</span></p>
+<p style="margin-left: 30px;"><span style="font-family: 'courier new', courier, monospace;">Your guess? <b><span style="text-decoration: underline;">7</span></b></span></p>
+<p style="margin-left: 30px;"><span style="font-family: 'courier new', courier, monospace;">You got it right in 5 guesses</span></p>
+<p style="margin-left: 30px;"><span style="font-family: 'courier new', courier, monospace;">Do you want to play again? <b><span style="text-decoration: underline;">y</span></b></span></p>
+<p style="margin-left: 30px;"><span style="font-family: 'courier new', courier, monospace;"> </span></p>
+<p style="margin-left: 30px;"><span style="font-family: 'courier new', courier, monospace;">I'm thinking of a number between 1 and 100...</span></p>
+<p style="margin-left: 30px;"><span style="font-family: 'courier new', courier, monospace;">Your guess? <b><span style="text-decoration: underline;">50</span></b></span></p>
+<p style="margin-left: 30px;"><span style="font-family: 'courier new', courier, monospace;">It's higher.</span></p>
+<p style="margin-left: 30px;"><span style="font-family: 'courier new', courier, monospace;">Your guess? <b><span style="text-decoration: underline;">75</span></b></span></p>
+<p style="margin-left: 30px;"><span style="font-family: 'courier new', courier, monospace;">It's lower.</span></p>
+<p style="margin-left: 30px;"><span style="font-family: 'courier new', courier, monospace;">Your guess? <b><span style="text-decoration: underline;">60</span></b></span></p>
+<p style="margin-left: 30px;"><span style="font-family: 'courier new', courier, monospace;">It's higher.</span></p>
+<p style="margin-left: 30px;"><span style="font-family: 'courier new', courier, monospace;">Your guess? <b><span style="text-decoration: underline;">67</span></b></span></p>
+<p style="margin-left: 30px;"><span style="font-family: 'courier new', courier, monospace;">It's lower.</span></p>
+<p style="margin-left: 30px;"><span style="font-family: 'courier new', courier, monospace;">Your guess? <b><span style="text-decoration: underline;">63</span></b></span></p>
+<p style="margin-left: 30px;"><span style="font-family: 'courier new', courier, monospace;">It's lower.</span></p>
+<p style="margin-left: 30px;"><span style="font-family: 'courier new', courier, monospace;">Your guess? <b><span style="text-decoration: underline;">62</span></b></span></p>
+<p style="margin-left: 30px;"><span style="font-family: 'courier new', courier, monospace;">It's lower.</span></p>
+<p style="margin-left: 30px;"><span style="font-family: 'courier new', courier, monospace;">Your guess? <b><span style="text-decoration: underline;">61</span></b></span></p>
+<p style="margin-left: 30px;"><span style="font-family: 'courier new', courier, monospace;">You got it right in 7 guesses</span></p>
+<p style="margin-left: 30px;"><span style="font-family: 'courier new', courier, monospace;">Do you want to play again? <b><span style="text-decoration: underline;">YES</span></b></span></p>
+<p style="margin-left: 30px;"><span style="font-family: 'courier new', courier, monospace;"> </span></p>
+<p style="margin-left: 30px;"><span style="font-family: 'courier new', courier, monospace;">I'm thinking of a number between 1 and 100...</span></p>
+<p style="margin-left: 30px;"><span style="font-family: 'courier new', courier, monospace;">Your guess? <b><span style="text-decoration: underline;">50</span></b></span></p>
+<p style="margin-left: 30px;"><span style="font-family: 'courier new', courier, monospace;">It's higher.</span></p>
+<p style="margin-left: 30px;"><span style="font-family: 'courier new', courier, monospace;">Your guess? <b><span style="text-decoration: underline;">75</span></b></span></p>
+<p style="margin-left: 30px;"><span style="font-family: 'courier new', courier, monospace;">It's higher.</span></p>
+<p style="margin-left: 30px;"><span style="font-family: 'courier new', courier, monospace;">Your guess? <b><span style="text-decoration: underline;">90</span></b></span></p>
+<p style="margin-left: 30px;"><span style="font-family: 'courier new', courier, monospace;">It's lower.</span></p>
+<p style="margin-left: 30px;"><span style="font-family: 'courier new', courier, monospace;">Your guess? <b><span style="text-decoration: underline;">80</span></b></span></p>
+<p style="margin-left: 30px;"><span style="font-family: 'courier new', courier, monospace;">It's higher.</span></p>
+<p style="margin-left: 30px;"><span style="font-family: 'courier new', courier, monospace;">Your guess? <b><span style="text-decoration: underline;">85</span></b></span></p>
+<p style="margin-left: 30px;"><span style="font-family: 'courier new', courier, monospace;">It's higher.</span></p>
+<p style="margin-left: 30px;"><span style="font-family: 'courier new', courier, monospace;">Your guess? <b><span style="text-decoration: underline;">87</span></b></span></p>
+<p style="margin-left: 30px;"><span style="font-family: 'courier new', courier, monospace;">It's lower.</span></p>
+<p style="margin-left: 30px;"><span style="font-family: 'courier new', courier, monospace;">Your guess? <b><span style="text-decoration: underline;">86</span></b></span></p>
+<p style="margin-left: 30px;"><span style="font-family: 'courier new', courier, monospace;">You got it right in 7 guesses</span></p>
+<p style="margin-left: 30px;"><span style="font-family: 'courier new', courier, monospace;">Do you want to play again? <b><span style="text-decoration: underline;">nope</span></b></span></p>
+<p style="margin-left: 30px;"><span style="font-family: 'courier new', courier, monospace;"> </span></p>
+<p style="margin-left: 30px;"><span style="font-family: 'courier new', courier, monospace;">Overall results:</span></p>
+<p style="margin-left: 30px;"><span style="font-family: 'courier new', courier, monospace;">  total games   = 3</span></p>
+<p style="margin-left: 30px;"><span style="font-family: 'courier new', courier, monospace;">  total guesses = 19</span></p>
+<p style="margin-left: 30px;"><span style="font-family: 'courier new', courier, monospace;">  guesses/game  = 6.3</span></p>
+<p style="margin-left: 30px;"><span style="font-family: 'courier new', courier, monospace;">  best game   = 5</span></p>
+<p>You should develop your code in the class <span style="font-family: 'courier new', courier, monospace;">Guess</span>. </p>
+<h4>Supporting files</h4>
+<p>A skeleton of the <span style="font-family: 'courier new', courier, monospace;">Guess.java</span> file is provided below:</p>
